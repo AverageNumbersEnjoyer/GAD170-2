@@ -122,13 +122,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speciesData: {fileID: 6187922695483883316, guid: cbe4228ade109b047935d93579efefa5, type: 3}
-  greenhouse: {fileID: 2970189790267454539, guid: 6536a24c91bfad84e9f639b78268e16b, type: 3}
   species: 
   speciesValue: 0
   plantHealth: 0
   plantValue: 0
-  self: {fileID: 8609738542508229906}
   material: {fileID: 0}
+  tmp: {fileID: 5486778855527338472, guid: 159397242bf4f0b47a3d10eb3a6de2c6, type: 3}
+  infoTextBox: {fileID: 0}
 --- !u!114 &4291683284340170975
 MonoBehaviour:
   m_ObjectHideFlags: 0

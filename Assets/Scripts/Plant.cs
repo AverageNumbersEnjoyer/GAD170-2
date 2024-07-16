@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Plant : MonoBehaviour
@@ -13,6 +14,7 @@ public class Plant : MonoBehaviour
     public double plantValue;
 
     public Material material;
+    public TextMeshProUGUI tmp;
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +38,14 @@ public class Plant : MonoBehaviour
         species = speciesData.speciesList[_rNum];
         speciesValue = speciesData.speciesValue[_rNum];
         //Calculate Plant Value
-        plantValue = (plantHealth + 1) / 5 * speciesValue;
+        plantValue = (double)(plantHealth + 1) / 5 * speciesValue;
 
         material = speciesData.materials[_rNum];
         Renderer renderer = GetComponent<Renderer>();
         renderer.material = material;
-    }
 
-    void DestroyPlant()
-    {
-        Destroy(gameObject);
+        tmp.text = ("Species: " + species);
     }
-
 
 
     

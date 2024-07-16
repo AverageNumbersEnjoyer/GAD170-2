@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Main : MonoBehaviour
 {
     //Reference
     public Greenhouse greenhouse;
-    public Plant plant;
     public GameObject plantPrefab;
     public GameObject newPlant;
     public GameObject canvas;
@@ -23,6 +23,7 @@ public class Main : MonoBehaviour
         Debug.Log("Your Greenhouse has a max capacity of 10 plants");
         Debug.Log("Once you reach that limit, choosing to Keep a New Plant\nresults in the loss of the lowest quality Plant in the Greenhouse");
         SpawnPlant();
+
     }
 
     public void nextTurn()
@@ -45,10 +46,13 @@ public class Main : MonoBehaviour
             newPlant.transform.position = new Vector3(0, -100, -10);
         }
         newPlant = Instantiate(plantPrefab);
+
     }
 
     public void ChooseKeep()
     {
         greenhouse.AddToGreenhouse(newPlant);
     }
+
+
 }
