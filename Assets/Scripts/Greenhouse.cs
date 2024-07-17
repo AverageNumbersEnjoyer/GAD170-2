@@ -27,7 +27,7 @@ public class Greenhouse : MonoBehaviour
         int _lowestPosition = 0;
 
         //Iterate through plants in greenhouse to find the one with the lowest health
-        for (int _i = 1; _i < plantsOwned.Count - 1; _i++)
+        for (int _i = 1; _i < plantsOwned.Count; _i++)
         {
             GameObject _nextGO = plantsOwned[_i];
             if (_nextGO != null)

@@ -45,6 +45,7 @@ public class Plant : MonoBehaviour
         _renderer.material = material;
     }
 
+    //Destroy the instance of itself
     public void DestroyPlant()
     {
         Destroy(gameObject);
