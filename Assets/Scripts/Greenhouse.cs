@@ -8,6 +8,7 @@ public class Greenhouse : MonoBehaviour
     public List<GameObject> plantsOwned = new List<GameObject>();
 
 
+    //Checks Greenhouse if it has max capacity of Plants
     public bool IsFull()
     {
         if (plantsOwned.Count >= 10)
@@ -17,6 +18,7 @@ public class Greenhouse : MonoBehaviour
         return false;
     }
 
+    //Removes Lowest Health Plant from Greenhouse List and Destroys it
     public void RemoveLowest()
     {
         //Initialise Starting point
@@ -47,8 +49,10 @@ public class Greenhouse : MonoBehaviour
         }
 
         //After looping through all Owned plants, remove the lowest health plant
+        //Removes plant from list
         plantsOwned.RemoveAt(_lowestPosition);
-        Destroy(_lowestGO);
+        //Destroys Instance
+        _lowestP.DestroyPlant();
     }
 
     public void AddToGreenhouse(GameObject _newPlant)
@@ -61,6 +65,23 @@ public class Greenhouse : MonoBehaviour
         //Add Plant to list
         plantsOwned.Add(_newPlant);
       
-        Debug.Log(plantsOwned.Count);
+        //Debug.Log(plantsOwned.Count);
+    }
+
+    //Sums all of the plant sale values and returns that sum
+    public double CalculateTotalValue()
+    {
+        //Initialise value to return
+        double _totalValue = 0;
+        //Loop through list, adding each plant value to return value
+        for (int _i = 0; _i < plantsOwned.Count - 1; _i++)
+        {
+            Plant _plant = plantsOwned[_i].GetComponent<Plant>();
+
+            _totalValue += _plant.plantValue;
+            
+        }
+        //Return sum
+        return _totalValue;
     }
 }

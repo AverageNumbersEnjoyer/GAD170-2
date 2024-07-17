@@ -49,4 +49,5 @@ MonoBehaviour:
   plantPrefab: {fileID: 8609738542508229906, guid: 2b93189e0d869ae4aba6a3d074eb12fd, type: 3}
   newPlant: {fileID: 0}
   canvas: {fileID: 1304875740896987578, guid: a4db989eb3e0ec244911e2802eb26285, type: 3}
-  PlantSpawn: {fileID: 0}
+  tmp: {fileID: 0}
+  newPlantProp: {fileID: 0}

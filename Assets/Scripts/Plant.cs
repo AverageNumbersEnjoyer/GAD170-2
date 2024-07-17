@@ -17,17 +17,18 @@ public class Plant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        createPlant();
+        //When plant created, set their stats and log to console
+        RandomisePlant();
         DebugNewPlant();
     }
 
-
+    //Log Stats to Debug Console
     void DebugNewPlant()
     {
         Debug.Log("New Plant| Species: " + species + " Health: " + plantHealth.ToString() + " Value: $" + plantValue.ToString());
     }
 
-    void createPlant()
+    void RandomisePlant()
     {
         //Initialise Plant variable values
         plantHealth = Random.Range(1, 11);
@@ -36,19 +37,18 @@ public class Plant : MonoBehaviour
         species = speciesData.speciesList[_rNum];
         speciesValue = speciesData.speciesValue[_rNum];
         //Calculate Plant Value
-        plantValue = (plantHealth + 1) / 5 * speciesValue;
+        plantValue = (double)(plantHealth + 1) / 5d * (double)speciesValue;
 
+        //Using SpeciesData, give Flowers their unique colour
         material = speciesData.materials[_rNum];
-        Renderer renderer = GetComponent<Renderer>();
-        renderer.material = material;
+        Renderer _renderer = GetComponent<Renderer>();
+        _renderer.material = material;
     }
 
-    void DestroyPlant()
+    public void DestroyPlant()
     {
         Destroy(gameObject);
     }
-
-
 
     
 }
