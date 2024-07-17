@@ -30,6 +30,8 @@ public class Main : MonoBehaviour
         Debug.Log("Once you reach that limit, choosing to Keep a New Plant\nresults in the loss of the lowest quality Plant in the Greenhouse");
 
         tmpInfo = infoCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        //Send to Console what day it is
+        Debug.Log("Day : " + turnCount);
         //Manually Spawns firsts plant and updates UI accordingly
         SpawnPlant();
     }
@@ -41,6 +43,8 @@ public class Main : MonoBehaviour
         if (turnCount < 21)
         {
             turnCount++;
+            //Send to Console what day it is
+            Debug.Log("Day : " + turnCount);
             SpawnPlant();
         }
         else
@@ -98,6 +102,6 @@ public class Main : MonoBehaviour
 
     public void UpdateEndScreen()
     {
-        tmpEndScreen.text = "Greenhouse Value : $" + greenhouse.CalculateTotalValue().ToString() + "0";
+        tmpEndScreen.text = "Greenhouse Value : $" + greenhouse.CalculateTotalValue().ToString();
     }
 }
